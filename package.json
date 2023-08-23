@@ -1,14 +1,14 @@
 {
   "name": "url_shorten",
   "version": "1.0.0",
-  "description": "",
+  "description": "URL_shorten",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["URL_shorten", "web_develop"],
+  "author": "Kelvin Nien",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
