@@ -7,10 +7,14 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": ["URL_shorten", "web_develop"],
+  "keywords": [
+    "URL_shorten",
+    "web_develop"
+  ],
   "author": "Kelvin Nien",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
   }
 }
