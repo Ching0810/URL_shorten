@@ -12,6 +12,7 @@ app.set('views', './views')
 // app.engine('handlebars', engine());
 // app.set('view engine', 'handlebars');
 // app.set('views', './views');
+app.use('/url_shorten', express.static('public'))
 
 app.get('/', (req, res) => {
   // req & res are both object, therefore we could use method through .
