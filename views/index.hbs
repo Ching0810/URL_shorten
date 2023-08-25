@@ -1,1 +1,18 @@
-<h1>Example App: Home {{shorten}}</h1>
+<div class="d-flex flex-column mb-3">
+  <div class="p-2">
+    <h3>URL Shortener</h3>
+  </div>
+  <div class="p-2">
+    <div class="card" style="width: 18rem;">
+      <img src="/images/link.png" class="card-img-top" alt="...">
+      <form action="/url_shorten_result" method="post">
+        <div class="mb-3">
+          {{!-- <label for="exampleInputEmail1" class="form-label">Input URL here</label> --}}
+          <input type="url" class="form-control" id="exampleInputEmail1" name="URLsubmit" placeholder="Input URL here..."
+            aria-describedby="emailHelp">
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary">Shorten</button>
+      </form>
+    </div>
+  </div>
+</div>

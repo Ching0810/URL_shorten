@@ -12,7 +12,9 @@ app.set('views', './views')
 // app.engine('handlebars', engine());
 // app.set('view engine', 'handlebars');
 // app.set('views', './views');
-app.use('/url_shorten', express.static('public'))
+app.use(express.static('public'))
+// 要用middleware解析結果
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   // req & res are both object, therefore we could use method through .
@@ -29,7 +31,16 @@ function random () {
 }
 
 app.get('/url_shorten', (req, res) => {
-  res.render('index', {shorten: random()})
+  res.render('index')
+})
+
+app.post('/url_shorten_result', (req, res) => {
+  // Handle the POST request here
+  const submittedUrl = req.body.URLsubmit;
+  // Perform any required logic (e.g., generating a short URL)
+  const shortUrl = random();
+  // Respond to the client with the generated short URL
+  res.render('result', {input_URL: submittedUrl, shorten: shortUrl})
 })
 
 app.listen(port, () => {
