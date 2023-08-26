@@ -45,6 +45,11 @@ app.post('/url_shorten_result', (req, res) => {
   } else {
     res.render('result', {port: port, shorten: shortenData[submittedUrl], shortenData})
   }
+  for (const [key, value] of Object.entries(shortenData)) {
+    app.get(`/${value}`, (req, res) => {
+      res.redirect(`${key}`)
+    })
+  }
 })
 
 app.listen(port, () => {
