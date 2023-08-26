@@ -27,4 +27,5 @@ npm run start
 5. In your browser, open http://localhost:3000 to see the website.
 
 ## Screenshots
-<img src="public/images/link.png" alt="URL shorten screenshots" width="300">
+<img src="public/images/Screenshot 2023-08-26 at 5.08.29 PM.png" alt="URL shorten screenshots" width="200">
+<img src="public/images/Screenshot 2023-08-26 at 5.08.45 PM.png" alt="URL shorten screenshots" width="00">
