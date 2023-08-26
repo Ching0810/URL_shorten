@@ -1,13 +1,15 @@
-<div class="d-flex flex-column mb-3">
-  <div class="p-2">
-    <h3>URL Shortener</h3>
+<div class="d-flex align-items-center flex-column">
+  <div class="container d-flex justify-content-center bg-light">
+    <div class="p-2">
+      <h3 class="fs-2">URL Shortener</h3>
+    </div>
   </div>
   <div class="p-2">
-    <div class="card" style="width: 18rem;">
-      <img src="/images/link.png" class="card-img-top" alt="...">
-      <h4>Success! Please use this link:</h4>
-      <a id="shortUrl" href="http://localhost:{{port}}/{{shorten}}">http://localhost:{{port}}/{{shorten}}</a>
-      <button id="copyButton" type="button" class="btn btn-primary" data-bs-toggle="button">Copy</button>
+    <div class="card border-light d-flex align-items-center flex-column" style="width: 25rem;">
+      <img src="/images/link.png" class="card-img-top mw-100 p-4" alt="link image">
+      <h4 class="m-1 fs-3">Success! Please use this link:</h4>
+      <a class="m-1 fs-3" id="shortUrl" href="http://localhost:{{port}}/{{shorten}}">http://localhost:{{port}}/{{shorten}}</a>
+      <button id="copyButton" type="button" class="btn btn-primary m-2" data-bs-toggle="button">Copy</button>
     </div>
   </div>
 </div>
