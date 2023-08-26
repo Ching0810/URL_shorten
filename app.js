@@ -25,13 +25,13 @@ app.get('/url_shorten', (req, res) => {
   res.render('index')
 })
 
-let shortenData = {}
+let shortenDataPair = {}
 
 app.post('/url_shorten_result', (req, res) => {
   // Handle the POST request here
-  const submittedUrl = req.body.URLsubmit
+  const clientSubmittedUrl = req.body.URLsubmit
   // Perform any required logic (e.g., generating a short URL),and respond to the client with the generated short URL
-  if (!Object.keys(shortenData).some((element) => element === submittedUrl)) {
+  if (!Object.keys(shortenDataPair).some((originUrl) => originUrl === clientSubmittedUrl)) {
     const shortUrl = () => {
       arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
       let str = ''
@@ -40,12 +40,12 @@ app.post('/url_shorten_result', (req, res) => {
       }
       return str
     }
-    shortenData[submittedUrl] = shortUrl()
-    res.render('result', {port: port, shorten: shortenData[submittedUrl], shortenData})
+    shortenDataPair[clientSubmittedUrl] = shortUrl()
+    res.render('result', {port: port, shorten: shortenDataPair[clientSubmittedUrl], shortenDataPair})
   } else {
-    res.render('result', {port: port, shorten: shortenData[submittedUrl], shortenData})
+    res.render('result', {port: port, shorten: shortenDataPair[clientSubmittedUrl], shortenDataPair})
   }
-  for (const [key, value] of Object.entries(shortenData)) {
+  for (const [key, value] of Object.entries(shortenDataPair)) {
     app.get(`/${value}`, (req, res) => {
       res.redirect(`${key}`)
     })
