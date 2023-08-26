@@ -31,7 +31,7 @@ app.post('/url_shorten_result', (req, res) => {
   // Handle the POST request here
   const clientSubmittedUrl = req.body.URLsubmit
   // Perform any required logic (e.g., generating a short URL),and respond to the client with the generated short URL
-  if (!Object.keys(shortenDataPair).some((element) => element === clientSubmittedUrl)) {
+  if (!Object.keys(shortenDataPair).some((originUrl) => originUrl === clientSubmittedUrl)) {
     const shortUrl = () => {
       arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
       let str = ''
