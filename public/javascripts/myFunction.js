@@ -1,4 +1,4 @@
-function fs () {
+function createFs () {
   const fs = require('fs')
   return fs
 }
@@ -21,9 +21,8 @@ function getKeyByValue(object, value) {
 }
 
 function storeData (shortenUrl, originUrl) {
-  fs()
   // 讀取 data.json 檔案
-  fs.readFile('./public/jsons/data.json', 'utf8', function (err, data) {
+  createFs().readFile('./public/jsons/data.json', 'utf8', function (err, data) {
     if (err) {
       console.error(err)
       return;
@@ -38,7 +37,7 @@ function storeData (shortenUrl, originUrl) {
       // 將新資料新增到 people 陣列
       jsonData[shortenUrl] = originUrl
       // 寫回檔案
-      fs.writeFile('./public/jsons/data.json', JSON.stringify(jsonData, null, 2), 'utf8', function (err) {
+      createFs().writeFile('./public/jsons/data.json', JSON.stringify(jsonData, null, 2), 'utf8', function (err) {
         if (err) {
           console.error(err);
           return;
@@ -52,7 +51,7 @@ function storeData (shortenUrl, originUrl) {
 }
 
 function readData (dataPath) {
-  return JSON.parse(fs().readFileSync(dataPath, 'utf8'))
+  return JSON.parse(createFs().readFileSync(dataPath, 'utf8'))
 }
 
 module.exports = {
