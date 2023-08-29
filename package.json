@@ -6,7 +6,12 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
-  },  
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/jsons/*"
+    ]
+  },
   "keywords": [
     "URL_shorten",
     "web_develop"

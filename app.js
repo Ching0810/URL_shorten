@@ -3,7 +3,6 @@ const { engine } = require('express-handlebars')
 const app = express()
 const port = 3000
 const myFunction = require('./public/javascripts/myFunction')
-let originData = myFunction.readData('./public/jsons/data.json')
 
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
@@ -23,6 +22,7 @@ app.get('/url_shorten', (req, res) => {
 app.post('/url_shorten_result', (req, res) => {
   // Handle the POST request here
   const clientSubmittedUrl = req.body.URLsubmit
+  let originData = myFunction.readData('./public/jsons/data.json')
   let fullUrl = ''
   if (!Object.values(originData).some((url) => url === clientSubmittedUrl)) {
     const shortUrl = myFunction.createShortUrl()
