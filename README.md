@@ -13,7 +13,7 @@ git clone https://github.com/Ching0810/URL_shorten.git
 </pre>
 2. Move to the ShortUrl directory
 <pre>
-cd ShortUrl
+cd URL_shorten
 </pre>
 3. Restore the dependencies
 <pre>
