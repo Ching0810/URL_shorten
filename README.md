@@ -11,7 +11,7 @@
 <pre>
 git clone https://github.com/Ching0810/URL_shorten.git
 </pre>
-2. Move to the ShortUrl directory
+2. Move to the URL_shorten directory
 <pre>
 cd URL_shorten
 </pre>
